@@ -1,12 +1,12 @@
 import React from 'react';
-
+import err404 from "../../assets/404.jpg"
 const Error403 = () => {
     return (
         <div>
                     <div>
                     <div>
             <div className= "h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
-	<h1 className= "text-9xl font-extrabold text-white tracking-widest">401</h1>
+	<h1 className= "text-9xl font-extrabold text-white tracking-widest">403</h1>
 	<div className= "bg-[#FF6A3D] px-2 text-sm rounded rotate-12 absolute">
     Forbidden
 	</div>
@@ -17,7 +17,7 @@ const Error403 = () => {
         <span
           className= "absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-[#FF6A3D] group-hover:translate-y-0 group-hover:translate-x-0"
         ></span>
-
+        
         <span className= "relative block px-8 py-3 bg-[#1A2238] border border-current">
           <router-link to="/">Go Home</router-link>
         </span>
