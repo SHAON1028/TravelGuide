@@ -83,7 +83,7 @@ const Navbar = () => {
                 aria-label="Sign up"
                 title="Sign up"
               >
-                Sign up
+                Sign In
               </Link>
             </li>
           </ul>
@@ -205,7 +205,7 @@ const Navbar = () => {
                 aria-label="Sign up"
                 title="Sign up"
               >
-                Sign up
+                Sign In
               </Link>
                       </li>
                     </ul>
