@@ -1,13 +1,78 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
+import toast, { Toaster } from 'react-hot-toast';
 const Register = () => {
+  const navigate = useNavigate()
+const location  = useLocation()
+const from = location.state?.from?.pathname || '/'
+const [error,setError] = useState('')
+  const {signInWithGoogle,createUser,signInWithGithub,updateUserProfile,user} = useContext(AuthContext) 
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    const form  = e.target
+    const name = form.name.value
+    const email = form.email.value
+    const photoURL = form.photo.value
+    const password = form.password.value
+    console.log(email,password,name)
+    createUser(email,password)
+    .then(results=>{
+      const user = results.user
+      console.log(user)
+      toast.success('Successfully Registered!')
+      form.reset();
+      
+      navigate(from,{replace:true})
+   
+  
+        handleUpdateProfile(name,photoURL)
+      
+     
+      
+      navigate(from,{replace:true})
+    })
+    .catch(error=>setError(error.message))
+
+     // ----------------Google-------------
+
+ const handleGoogleSignIn = ()=>{
+  signInWithGoogle()
+  .then(results=>{
+    const user = results.user
+    console.log(user); 
+    
+    navigate(from,{replace:true}) 
+ 
+    
+  })
+  .catch(error=>setError(error.message))
+
+}
+
+
+  }
+
+  // upadte profile
+
+  const handleUpdateProfile = (name,photoURL)=>{
+    const profile = {
+        displayName:name,
+        photoURL:photoURL
+    }
+    updateUserProfile(profile)
+    .then(()=>{
+     toast.success('Update success!')
+    })
+    .catch(error=>setError(error.message))
+  }
     return (
         <div
         className="mx-auto flex min-h-screen w-full items-center justify-center bg-gray-900 text-white "
       >
       
-        <form className="flex w-[30rem] flex-col space-y-10">
+        <form onSubmit={handleSubmit} className="flex w-[30rem] flex-col space-y-10">
           <div className="text-center text-4xl font-medium">Sign Up</div>
           <div
             className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500"

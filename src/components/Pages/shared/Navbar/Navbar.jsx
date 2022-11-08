@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/UserContext';
 
 const Navbar = () => {
+  const { user,logOut} = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleLogOut = ()=>
+{
+  logOut()
+  .then(()=>{})
+  .catch(error=>console.log(error))
+}
 
     return (
       <div className= "bg-gray-900">
@@ -76,7 +85,24 @@ const Navbar = () => {
             </li>
           </ul>
           <ul className= "flex items-center hidden space-x-8 lg:flex">
-            <li>
+           {
+              user?.uid ?
+              <>
+       <div className="avatar">      
+              <img
+       src={user.photoURL}
+      style={{height:'40px'}}
+      className="mr-3 h-6 sm:h-9 relative mx-auto rounded-3xl overflow-hidden ring ring-primary ring-offset-base-100 ring-offset-2"
+      alt=""
+      referrerPolicy="no-referrer"
+    /> 
+    </div> 
+
+
+              <button onClick={handleLogOut} className="btn btn-outline btn-error">Logout</button>
+              </>:
+              <>
+               <li>
               <Link
                 to="/login"
                 className= "inline-flex items-center justify-center h-12 px-6 text-base tracking-wide text-black font-bold transition duration-200 rounded-3xl shadow-md bg-green-500 hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
@@ -86,6 +112,9 @@ const Navbar = () => {
                 Sign In
               </Link>
             </li>
+              </>
+
+           }
           </ul>
           <div className= "lg:hidden ">
             <button
@@ -198,8 +227,15 @@ const Navbar = () => {
                           About us
                         </a>
                       </li>
-                      <li>
-                      <Link
+                      {
+              user?.uid ?
+              <>
+              
+              <button onClick={handleLogOut} className="btn btn-outline btn-error">Logout</button>
+              </>:
+              <>
+               <li>
+              <Link
                 to="/login"
                 className= "inline-flex items-center justify-center h-12 px-6 text-base tracking-wide text-black font-bold transition duration-200 rounded-3xl shadow-md bg-green-500 hover:bg-blue-700 hover:text-white focus:shadow-outline focus:outline-none"
                 aria-label="Sign up"
@@ -207,7 +243,10 @@ const Navbar = () => {
               >
                 Sign In
               </Link>
-                      </li>
+            </li>
+              </>
+
+           }
                     </ul>
                   </nav>
                 </div>
