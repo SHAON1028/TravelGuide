@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
 import { MdOutlineFlight } from 'react-icons/md';
 import { FaHotel,FaCcVisa,FaBook} from 'react-icons/fa';
@@ -51,44 +51,53 @@ const Navbar = () => {
           </a>
           <ul className= "flex items-center hidden space-x-8 lg:flex">
             <li>
-              <Link
+              <NavLink
                 to="/"
                 aria-label="Our product"
-                title="Our product"
-                className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                title=""
+                // className= "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className={({ isActive }) =>
+                isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
+              }
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/services"
                 aria-label="Our product"
-                title="Our product"
-                className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                title=""
+                className={({ isActive }) =>
+                isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
+              }
               >
                 Services
-              </Link>
+              </NavLink>
             </li>
             <li>
               <a
-                href="/"
+                to="/"
                 aria-label="Product pricing"
                 title="Product pricing"
-                className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className={({ isActive }) =>
+                isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
+              }
               >
                 Pricing
               </a>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/blog"
                 aria-label="About us"
-                title="About us"
-                className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                title=""
+                className={({ isActive }) =>
+                isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
+              }
               >
                 Blog
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <ul className= "flex items-center hidden space-x-8 lg:flex">
@@ -195,24 +204,26 @@ const Navbar = () => {
                   <nav>
                     <ul className= "space-y-4">
                       <li>
-                        <a
-                          href="/"
+                        <NavLink
+                          to="/"
                           aria-label="Our product"
-                          title="Our product"
+                          title=""
                           className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                         >
-                          Product
-                        </a>
+                          Home
+                        </NavLink>
                       </li>
                       <li>
-                        <a
-                          href="/"
+                        <NavLink
+                          to="/services"
                           aria-label="Our product"
-                          title="Our product"
-                          className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                          title=""
+                          className={({ isActive }) =>
+                          isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
+                        }
                         >
-                          Features
-                        </a>
+                          Services
+                        </NavLink>
                       </li>
                       <li>
                         <a
@@ -225,14 +236,16 @@ const Navbar = () => {
                         </a>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/blog"
                           aria-label="About us"
-                          title="About us"
-                          className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                          title=""
+                          className={({ isActive }) =>
+                isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
+              }
                         >
                           Blog
-                        </Link>
+                        </NavLink>
                       </li>
                       {
               user?.uid ?
