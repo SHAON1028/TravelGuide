@@ -51,24 +51,24 @@ const Navbar = () => {
           </a>
           <ul className= "flex items-center hidden space-x-8 lg:flex">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 aria-label="Our product"
                 title="Our product"
                 className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Product
-              </a>
+                Home
+              </Link>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/services"
                 aria-label="Our product"
                 title="Our product"
                 className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Features
-              </a>
+                Services
+              </Link>
             </li>
             <li>
               <a

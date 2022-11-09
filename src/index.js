@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import UserContext from './components/context/UserContext';
 import toast, { Toaster } from 'react-hot-toast';
 
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
