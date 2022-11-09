@@ -4,7 +4,7 @@ import ServiceCard from './ServiceCard';
 
 const Service = () => {
     const services = useLoaderData()
-    console.log(services)
+   
     return (
         <div  >
            <h1 className='lg:text-5xl text-4xl m-10 text-center '>Our Services</h1>

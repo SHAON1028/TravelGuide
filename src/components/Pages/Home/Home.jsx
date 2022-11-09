@@ -1,6 +1,10 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import beach from '../../../assets/pexels-asad-photo-maldives-1266831.jpg'
+import HomeCard from './HomeCard';
 const Home = () => {
+  const servicesHome = useLoaderData()
+  console.log(servicesHome)
     return (
         <div>
             <div className="hero min-h-screen" style={{ backgroundImage: `url(${beach})` }}>
@@ -16,6 +20,13 @@ const Home = () => {
 
     <div>
         <h1 className='lg:text-5xl text-4xl m-10 text-center '>Our Services</h1>
+
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 lg:ml-32 mt-24 mb-24 ml-20'>
+          {
+            servicesHome.map(serviceHome=><HomeCard serviceHome={serviceHome} key={serviceHome._id}></HomeCard>)
+           }
+          </div>
+          
     </div>
         </div>
     );

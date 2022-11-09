@@ -1,11 +1,13 @@
 import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-const ServiceCard = ({service}) => {
-    const{title,img,price,about} = service
+
+const HomeCard = ({serviceHome}) => {
+    const{title,img,price,about} = serviceHome
     const description = about.slice(0,120)
-   
+    console.log(description)
     return (
-        <div >
+        <div>
+                    <div >
            <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
     <div className="px-4 py-2">
         <h1 className="text-3xl font-bold text-gray-800 uppercase dark:text-white">{title}</h1>
@@ -25,7 +27,8 @@ const ServiceCard = ({service}) => {
     </div>
 </div>
         </div>
+        </div>
     );
 };
 
-export default ServiceCard;
+export default HomeCard;
