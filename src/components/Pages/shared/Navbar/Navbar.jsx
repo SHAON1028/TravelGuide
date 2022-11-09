@@ -74,14 +74,14 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/blog"
                 aria-label="About us"
                 title="About us"
                 className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                About us
-              </a>
+                Blog
+              </Link>
             </li>
           </ul>
           <ul className= "flex items-center hidden space-x-8 lg:flex">
@@ -218,14 +218,14 @@ const Navbar = () => {
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="/"
+                        <Link
+                          to="/blog"
                           aria-label="About us"
                           title="About us"
                           className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                         >
-                          About us
-                        </a>
+                          Blog
+                        </Link>
                       </li>
                       {
               user?.uid ?
