@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
 import { MdOutlineFlight } from 'react-icons/md';
-import { FaHotel,FaCcVisa} from 'react-icons/fa';
+import { FaHotel,FaCcVisa,FaBook} from 'react-icons/fa';
 import { AiFillCar} from "react-icons/ai";
 import { GiCruiser } from "react-icons/gi";
 import { MdFastfood } from "react-icons/md";
@@ -266,11 +266,11 @@ const Navbar = () => {
       {/* list of services */}
       <div className="container text-center mx-auto p-4 mt-5">
   <div className="lg:flex justify-center rounded-md lg:text-lg" role="group">
-    <button className="bg-black flex items-center text-green-500 hover:bg-blue-500 hover:text-white border-r-1 border-blue-500 rounded-l-lg px-4 py-1 mx-0 outline-none focus:shadow-outline"><MdOutlineFlight/>Flight</button>
+    <button className="bg-black flex items-center text-green-500 hover:bg-blue-500 hover:text-white border-r-1 border-blue-500 rounded-l-lg px-4 py-1 mx-0 outline-none focus:shadow-outline"><MdOutlineFlight/> Flight</button>
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none flex items-center focus:shadow-outline"><FaHotel/> Hotels</button>
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><AiFillCar/>Cars</button>
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><GiCruiser/>Cruises</button>
-    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><MdFastfood/>Food</button>
+    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><FaBook/>Tour Guide</button>
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l  border-green-500 rounded-r-lg  flex items-center px-4 py-2 mx-0 outline-none focus:shadow-outline"><FaCcVisa/>Visa</button>
   </div>
 </div>
