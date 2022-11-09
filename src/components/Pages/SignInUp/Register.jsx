@@ -74,6 +74,7 @@ const [error,setError] = useState('')
       
         <form onSubmit={handleSubmit} className="flex w-[30rem] flex-col space-y-10">
           <div className="text-center text-4xl font-medium">Sign Up</div>
+          <p className='text-red-700'><small>{error}</small></p>
           <div
             className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500"
           >

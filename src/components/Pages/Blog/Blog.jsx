@@ -1,10 +1,14 @@
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Blog = () => {
     return (
 
         <div>
-            <p className='text-4xl font-mono text-slate-50 mt-10 ' >Blog</p>
+            <p className='text-4xl font-mono text-slate-50 mt-10 text-center ' >Blog</p>
+            
+     
   <section class="w-full bg-gray-900 border divide-y rounded divide-slate-200 border-slate-200 my-20">
   <details class="p-4 group" open>
     <summary class="[&::-webkit-details-marker]:hidden relative flex gap-4 pr-8 font-medium list-none cursor-pointer text-slate-300 focus-visible:outline-none transition-colors duration-300 group-hover:text-slate-100 ">

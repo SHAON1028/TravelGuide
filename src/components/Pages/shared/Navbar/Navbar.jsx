@@ -1,6 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
+import { MdOutlineFlight } from 'react-icons/md';
+import { FaHotel,FaCcVisa} from 'react-icons/fa';
+import { AiFillCar} from "react-icons/ai";
+import { GiCruiser } from "react-icons/gi";
+import { MdFastfood } from "react-icons/md";
+
+
 
 const Navbar = () => {
   const { user,logOut} = useContext(AuthContext);
@@ -48,7 +55,7 @@ const Navbar = () => {
                 href="/"
                 aria-label="Our product"
                 title="Our product"
-                className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Product
               </a>
@@ -58,7 +65,7 @@ const Navbar = () => {
                 href="/"
                 aria-label="Our product"
                 title="Our product"
-                className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Features
               </a>
@@ -68,7 +75,7 @@ const Navbar = () => {
                 href="/"
                 aria-label="Product pricing"
                 title="Product pricing"
-                className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Pricing
               </a>
@@ -78,7 +85,7 @@ const Navbar = () => {
                 to="/blog"
                 aria-label="About us"
                 title="About us"
-                className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                className= "border-b-2 border-transparent hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Blog
               </Link>
@@ -255,6 +262,18 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* list of services */}
+      <div className="container text-center mx-auto p-4 mt-5">
+  <div className="lg:flex justify-center rounded-md lg:text-lg" role="group">
+    <button className="bg-black flex items-center text-green-500 hover:bg-blue-500 hover:text-white border-r-1 border-blue-500 rounded-l-lg px-4 py-1 mx-0 outline-none focus:shadow-outline"><MdOutlineFlight/>Flight</button>
+    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none flex items-center focus:shadow-outline"><FaHotel/> Hotels</button>
+    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><AiFillCar/>Cars</button>
+    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><GiCruiser/>Cruises</button>
+    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><MdFastfood/>Food</button>
+    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l  border-green-500 rounded-r-lg  flex items-center px-4 py-2 mx-0 outline-none focus:shadow-outline"><FaCcVisa/>Visa</button>
+  </div>
+</div>
     </div>
     );
 };
