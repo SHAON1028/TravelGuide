@@ -3,6 +3,7 @@ import ErrorPage from "../components/Error/ErrorPage";
 import Blog from "../components/Pages/Blog/Blog";
 import Home from "../components/Pages/Home/Home";
 import Service from "../components/Pages/Service/Service";
+import ServiceDetails from "../components/Pages/ServiceDetails/ServiceDetails";
 import Login from "../components/Pages/SignInUp/Login";
 import Register from "../components/Pages/SignInUp/Register";
 import Main from "../layout/Main";
@@ -38,6 +39,12 @@ const router = createBrowserRouter([
                 path:'/services',
                 element:<Service></Service>,
                 loader:()=>fetch('http://localhost:5000/services')
+              
+            },
+            {
+                path:'/services/:id',
+                element:<ServiceDetails></ServiceDetails>,
+                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
               
             },
         ]

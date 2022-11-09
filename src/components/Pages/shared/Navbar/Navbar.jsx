@@ -75,18 +75,7 @@ const Navbar = () => {
                 Services
               </NavLink>
             </li>
-            <li>
-              <a
-                to="/"
-                aria-label="Product pricing"
-                title="Product pricing"
-                className={({ isActive }) =>
-                isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
-              }
-              >
-                Pricing
-              </a>
-            </li>
+
             <li>
               <NavLink
                 to="/blog"
@@ -225,16 +214,7 @@ const Navbar = () => {
                           Services
                         </NavLink>
                       </li>
-                      <li>
-                        <a
-                          href="/"
-                          aria-label="Product pricing"
-                          title="Product pricing"
-                          className= "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                        >
-                          Pricing
-                        </a>
-                      </li>
+
                       <li>
                         <NavLink
                           to="/blog"
@@ -275,18 +255,30 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
+      {/* to= {`/services/${_id}`} */}
       {/* list of services */}
-      <div className="container text-center mx-auto p-4 mt-5">
+      {/* <div className="container text-center mx-auto p-4 mt-5">
   <div className="lg:flex justify-center rounded-md lg:text-lg" role="group">
-    <button className="bg-black flex items-center text-green-500 hover:bg-blue-500 hover:text-white border-r-1 border-blue-500 rounded-l-lg px-4 py-1 mx-0 outline-none focus:shadow-outline"><MdOutlineFlight/> Flight</button>
-    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none flex items-center focus:shadow-outline"><FaHotel/> Hotels</button>
-    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><AiFillCar/>Cars</button>
+   <Link to={`/services/${_id}`}>
+   <button className="bg-black flex items-center text-green-500 hover:bg-blue-500 hover:text-white border-r-1 border-blue-500 rounded-l-lg px-4 py-1 mx-0 outline-none focus:shadow-outline"><MdOutlineFlight/> Flight</button>
+   </Link>
+   <Link to={`/services/${_id}`}>
+   <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none flex items-center focus:shadow-outline"><FaHotel/> Hotels</button>
+   </Link>
+   <Link to={`/services/${_id}`}>
+   <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><AiFillCar/>Cars</button>
+   </Link>
+    <Link to={`/services/${_id}`}>
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><GiCruiser/>Cruises</button>
+    </Link>
+    <Link to={`/services/${_id}`}>
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><FaBook/>Tour Guide</button>
+    </Link>
+    <Link to={`/services/${_id}`}>
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l  border-green-500 rounded-r-lg  flex items-center px-4 py-2 mx-0 outline-none focus:shadow-outline"><FaCcVisa/>Visa</button>
+    </Link>
   </div>
-</div>
+</div> */}
     </div>
     );
 };
