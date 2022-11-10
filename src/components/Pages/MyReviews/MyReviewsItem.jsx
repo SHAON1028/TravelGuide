@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const MyReviewsItem = ({review,handleDelete}) => {
+const MyReviewsItem = ({review,handleDelete,handleStatusUpdate}) => {
     const {name,message,photo,title,_id} =review
     return (
         <div className='mb-3'>
@@ -22,7 +23,11 @@ const MyReviewsItem = ({review,handleDelete}) => {
 			</svg>
 			<span className="text-xl font-bold">4.5</span>
             <button onClick={() => handleDelete(_id)} className="btn btn-outline btn-error">Delete</button>
-            <button className="btn btn-outline btn-info">Edit</button>
+           <Link to={`/myreviews/${_id}`}>
+           <button 
+                
+                className="btn btn-ghost btn-xs">edit</button>
+           </Link>
 		</div>
 	</div>
 	<div className="p-4 space-y-2 text-sm dark:text-gray-400">
