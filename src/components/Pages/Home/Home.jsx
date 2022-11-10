@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import beach from '../../../assets/pexels-asad-photo-maldives-1266831.jpg'
+import useTitle from '../../../hooks/useTitle';
 import HomeCard from './HomeCard';
 const Home = () => {
   const servicesHome = useLoaderData()
+  useTitle('Home')
  
     return (
         <div>

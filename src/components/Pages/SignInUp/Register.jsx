@@ -2,12 +2,14 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 import toast, { Toaster } from 'react-hot-toast';
+import useTitle from '../../../hooks/useTitle';
 const Register = () => {
   const navigate = useNavigate()
 const location  = useLocation()
 const from = location.state?.from?.pathname || '/'
 const [error,setError] = useState('')
   const {signInWithGoogle,createUser,signInWithGithub,updateUserProfile,user} = useContext(AuthContext) 
+  useTitle('Register')
 
   const handleSubmit = (e)=>{
     e.preventDefault()
