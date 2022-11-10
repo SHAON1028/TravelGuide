@@ -1,0 +1,50 @@
+import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+import UserContext, { AuthContext } from '../../context/UserContext';
+import MyReviewsItem from './MyReviewsItem';
+
+const MyReviews = () => {
+    const {user} = useContext(AuthContext)
+    console.log(user)
+    const[reviews,setReviews] = useState([])
+   
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
+           
+            .then(res => {
+               
+                return res.json();
+            })
+            .then(data => {
+                setReviews(data);
+            })
+    }, [user?.email])
+    const handleDelete = id => {
+        const proceed = window.confirm('confirm delete');
+        if (proceed) {
+            fetch(`http://localhost:5000/myreviews/${id}`, {
+                method: 'DELETE',
+               
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        toast.error('deleted successfully');
+                        const remaining = reviews.filter(rvw => rvw._id !== id);
+                        setReviews(remaining);
+                    }
+                })
+        }
+    }
+    return (
+        <div>
+            <p className='text-3xl text-center m-10 '>My Reviews</p>
+            {
+                reviews.map(review=><MyReviewsItem key={review._id} review={review} handleDelete={handleDelete}></MyReviewsItem>)
+            }
+        </div>
+    );
+};
+
+export default MyReviews;

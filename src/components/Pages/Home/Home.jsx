@@ -32,11 +32,13 @@ const Home = () => {
        
      
            <Link to="/services">
+           <div className='text-center'>
            <button  onClick={() => {
           window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-        }} className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-green-700 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+        }} className="inline-flex  items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-green-700 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
   <span>Show All</span>
 </button>
+           </div>
            </Link>
 
 
