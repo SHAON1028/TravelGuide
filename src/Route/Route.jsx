@@ -11,6 +11,7 @@ import Login from "../components/Pages/SignInUp/Login";
 import Register from "../components/Pages/SignInUp/Register";
 import Update from "../components/Udate/Update";
 import Main from "../layout/Main";
+import PrivateRoute from "../Route/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path:'/services',
                 element:<Service></Service>,
-                loader:()=>fetch('http://localhost:5000/services')
+               
               
             },
 
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
               },
               {
                 path: '/myreviews',
-                element:<MyReviews></MyReviews>
+                element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
               },
               {
                 path:'/myreviews/:id',

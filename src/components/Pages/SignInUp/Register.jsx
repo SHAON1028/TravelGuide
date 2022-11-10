@@ -6,6 +6,7 @@ import useTitle from '../../../hooks/useTitle';
 const Register = () => {
   const navigate = useNavigate()
 const location  = useLocation()
+const [loading,setLoading] = useState(true)
 const from = location.state?.from?.pathname || '/'
 const [error,setError] = useState('')
   const {signInWithGoogle,createUser,signInWithGithub,updateUserProfile,user} = useContext(AuthContext) 
@@ -13,6 +14,7 @@ const [error,setError] = useState('')
 
   const handleSubmit = (e)=>{
     e.preventDefault()
+    setLoading(false)
     const form  = e.target
     const name = form.name.value
     const email = form.email.value
@@ -22,7 +24,7 @@ const [error,setError] = useState('')
     createUser(email,password)
     .then(results=>{
       const user = results.user
-      console.log(user)
+      setLoading(true)
       toast.success('Successfully Registered!')
       form.reset();
       
@@ -73,6 +75,11 @@ const [error,setError] = useState('')
         <div
         className="mx-auto flex min-h-screen w-full items-center justify-center bg-gray-900 text-white "
       >
+        {loading===false ? <> <div className="flex items-center justify-center mb-96">
+	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+</div></>:""}
       
         <form onSubmit={handleSubmit} className="flex w-[30rem] flex-col space-y-10">
           <div className="text-center text-4xl font-medium">Sign Up</div>

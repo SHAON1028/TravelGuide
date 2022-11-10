@@ -6,6 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
+  const [loading,setLoading] = useState(true)
   const from = location.state?.from?.pathname || '/'
   const [error,setError] = useState('')
 
@@ -16,17 +17,39 @@ const Login = () => {
     // handler----------------------
     const handleSubmit = (e)=>{
       e.preventDefault()
+      setLoading(false)
       const form  = e.target
       const email = form.email.value
       const password = form.password.value
+
       signIn(email,password)
-      .then(results=>{
-        const user = results.user
-        console.log(user);
-        toast.success('Successfully Login!')
-        navigate(from,{replace:true})
-       
-      })
+      .then(result => {
+        const user = result.user;
+
+        setLoading(true)
+        const currentUser = {
+            email: user.email
+        }
+
+        console.log(currentUser);
+
+        // get jwt token
+        fetch('http://localhost:5000/jwt', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(currentUser)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                // local storage is the easiest but not the best place to store jwt token
+                localStorage.setItem('genius-token', data.token);
+                navigate(from, { replace: true });
+            });
+        
+    })
       .catch(error=> setError(error.message))
       
     }
@@ -48,7 +71,11 @@ const Login = () => {
 <div
   className="mx-auto flex min-h-screen w-full items-center justify-center bg-gray-900 text-white "
 >
-
+{loading===false ? <> <div className="flex items-center justify-center mb-96">
+	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+</div></>:""}
   <form onSubmit={handleSubmit} className="flex w-[30rem] flex-col space-y-10">
     <div className="text-center text-4xl font-medium">Sign In</div>
     <p className='text-red-700'><small>{error}</small></p>

@@ -88,7 +88,10 @@ const Navbar = () => {
                 Blog
               </NavLink>
             </li>
-            <li>
+            {
+              user?.email ? <>
+              
+              <li>
                         <NavLink
                           to="/myreviews"
                           aria-label="About us"
@@ -97,9 +100,11 @@ const Navbar = () => {
                 isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
               }
                         >
-                          My Reviews
+                          My Review
                         </NavLink>
                       </li>
+              </>:""
+            }
           </ul>
           <ul className= "flex items-center hidden space-x-8 lg:flex">
            {
@@ -240,7 +245,10 @@ const Navbar = () => {
                         </NavLink>
                       </li>
                       
-                      <li>
+                      {
+              user?.email ? <>
+              
+              <li>
                         <NavLink
                           to="/myreviews"
                           aria-label="About us"
@@ -249,9 +257,11 @@ const Navbar = () => {
                 isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
               }
                         >
-                          My Reviews
+                          My Review
                         </NavLink>
                       </li>
+              </>:""
+            }
                       {
               user?.uid ?
               <>

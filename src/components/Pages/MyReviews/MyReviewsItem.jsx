@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MyReviewsItem = ({review,handleDelete,handleStatusUpdate}) => {
-    const {name,message,photo,title,_id} =review
+    const {name,message,photo,title,_id,date} =review
     return (
         <div className='mb-3'>
             <h2 className='text-2xl text-center text-orange-500'>{title}</h2>
@@ -14,6 +14,7 @@ const MyReviewsItem = ({review,handleDelete,handleStatusUpdate}) => {
 			</div>
 			<div>
 				<h4 className="font-bold">{name}</h4>
+                <span className="text-xs dark:text-gray-400">{date}</span>
 				
 			</div>
 		</div>
@@ -26,7 +27,7 @@ const MyReviewsItem = ({review,handleDelete,handleStatusUpdate}) => {
            <Link to={`/myreviews/${_id}`}>
            <button 
                 
-                className="btn btn-ghost btn-xs">edit</button>
+                className="btn btn-outline btn-secendary">edit</button>
            </Link>
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ServiceAllReview = ({review}) => {
-    const {name,photo,message} = review
+    const {name,photo,message,date} = review
 
     return (
         <div>
@@ -13,7 +13,7 @@ const ServiceAllReview = ({review}) => {
 			</div>
 			<div>
 				<h4 className="font-bold">{name}</h4>
-				<span className="text-xs dark:text-gray-400">2 days ago</span>
+				<span className="text-xs dark:text-gray-400">{date}</span>
 			</div>
 		</div>
 		<div className="flex items-center space-x-2 dark:text-yellow-500">

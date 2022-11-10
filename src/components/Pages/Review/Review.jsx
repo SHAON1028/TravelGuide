@@ -2,7 +2,9 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/UserContext';
 
+
 const Review = ({serviceDetails,loading}) => {
+   
     const{_id,title} = serviceDetails
     const {user} = useContext(AuthContext)
     
@@ -16,6 +18,8 @@ const Review = ({serviceDetails,loading}) => {
         const name = user?.displayName
         const photo = user?.photoURL
         const email = user?.email
+        const current = new Date();
+        const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`
 
         const review = {
             reviewId: _id,
@@ -23,7 +27,8 @@ const Review = ({serviceDetails,loading}) => {
            name,
            photo,
            email,
-           title
+           title,
+           date
 
         }
         
@@ -31,6 +36,7 @@ const Review = ({serviceDetails,loading}) => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('genius-token')}`
                
             },
             body: JSON.stringify(review)

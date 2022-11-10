@@ -7,6 +7,7 @@ const MyReviews = () => {
     const {user} = useContext(AuthContext)
     console.log(user)
     const[reviews,setReviews] = useState([])
+    const [loading,setLoading] = useState(true)
    
 
     useEffect(() => {
@@ -18,6 +19,7 @@ const MyReviews = () => {
             })
             .then(data => {
                 setReviews(data);
+                setLoading(false)
             })
     }, [user?.email])
     const handleDelete = id => {
@@ -62,9 +64,17 @@ const MyReviews = () => {
     return (
         <div>
             <p className='text-3xl text-center m-10 '>My Reviews</p>
-            {
+           {
+                loading===true ? <><div className="flex items-center justify-center space-x-2">
+                <div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+                <div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+                <div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
+            </div></>:<>
+                 {
                 reviews.map(review=><MyReviewsItem key={review._id} review={review} handleDelete={handleDelete} handleStatusUpdate={handleStatusUpdate}></MyReviewsItem>)
             }
+                </>
+           }
         </div>
     );
 };
