@@ -4,7 +4,7 @@ import beach from '../../../assets/pexels-asad-photo-maldives-1266831.jpg'
 import HomeCard from './HomeCard';
 const Home = () => {
   const servicesHome = useLoaderData()
-  console.log(servicesHome)
+ 
     return (
         <div>
             <div className="hero min-h-screen" style={{ backgroundImage: `url(${beach})` }}>

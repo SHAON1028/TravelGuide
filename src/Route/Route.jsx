@@ -4,6 +4,7 @@ import Blog from "../components/Pages/Blog/Blog";
 import Home from "../components/Pages/Home/Home";
 import Service from "../components/Pages/Service/Service";
 import ServiceDetails from "../components/Pages/ServiceDetails/ServiceDetails";
+import Navbar from "../components/Pages/shared/Navbar/Navbar";
 import Login from "../components/Pages/SignInUp/Login";
 import Register from "../components/Pages/SignInUp/Register";
 import Main from "../layout/Main";
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
                 loader:()=>fetch('http://localhost:5000/services')
               
             },
+            
             {
                 path:'/services/:id',
                 element:<ServiceDetails></ServiceDetails>,

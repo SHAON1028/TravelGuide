@@ -3,7 +3,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const HomeCard = ({serviceHome}) => {
-    console.log(serviceHome)
+   
     const{title,img,price,about,_id} = serviceHome
     const description = about.slice(0,120)
    

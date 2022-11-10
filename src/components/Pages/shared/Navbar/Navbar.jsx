@@ -5,7 +5,7 @@ import { MdOutlineFlight } from 'react-icons/md';
 import { FaHotel,FaCcVisa,FaBook} from 'react-icons/fa';
 import { AiFillCar} from "react-icons/ai";
 import { GiCruiser } from "react-icons/gi";
-import { MdFastfood } from "react-icons/md";
+
 
 
 
@@ -75,7 +75,7 @@ const Navbar = () => {
                 Services
               </NavLink>
             </li>
-
+           
             <li>
               <NavLink
                 to="/blog"
@@ -214,7 +214,7 @@ const Navbar = () => {
                           Services
                         </NavLink>
                       </li>
-
+                      
                       <li>
                         <NavLink
                           to="/blog"
@@ -255,30 +255,28 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* to= {`/services/${_id}`} */}
+      {/* to= "" */}
       {/* list of services */}
-      {/* <div className="container text-center mx-auto p-4 mt-5">
+      <div className="container text-center mx-auto p-4 mt-5">
   <div className="lg:flex justify-center rounded-md lg:text-lg" role="group">
-   <Link to={`/services/${_id}`}>
-   <button className="bg-black flex items-center text-green-500 hover:bg-blue-500 hover:text-white border-r-1 border-blue-500 rounded-l-lg px-4 py-1 mx-0 outline-none focus:shadow-outline"><MdOutlineFlight/> Flight</button>
+  <Link to="">
+   <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none flex items-center focus:shadow-outline"><MdOutlineFlight/> Flight</button>
    </Link>
-   <Link to={`/services/${_id}`}>
+   <Link to="">
    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none flex items-center focus:shadow-outline"><FaHotel/> Hotels</button>
    </Link>
-   <Link to={`/services/${_id}`}>
+   <Link to="">
    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><AiFillCar/>Cars</button>
    </Link>
-    <Link to={`/services/${_id}`}>
+    <Link to="">
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><GiCruiser/>Cruises</button>
     </Link>
-    <Link to={`/services/${_id}`}>
+    <Link >
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><FaBook/>Tour Guide</button>
     </Link>
-    <Link to={`/services/${_id}`}>
     <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l  border-green-500 rounded-r-lg  flex items-center px-4 py-2 mx-0 outline-none focus:shadow-outline"><FaCcVisa/>Visa</button>
-    </Link>
   </div>
-</div> */}
+</div>
     </div>
     );
 };
