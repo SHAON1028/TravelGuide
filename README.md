@@ -7,10 +7,10 @@ Where you find many information about the place you wanted to visit.You will kno
 
 - Login,Registration
 - Add service
-  -Add review
-  -Edit review
+- Add review
+- Edit review
 - Delete Review
-  -Jwt
+- Jwt
 
 ## Built With
 
