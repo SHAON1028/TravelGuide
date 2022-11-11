@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch('http://localhost:5000/home')
+                loader:()=>fetch('https://service-server-bice.vercel.app/home')
               
             },
             {
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element:<ServiceDetails></ServiceDetails>,
-                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params})=>fetch(`https://service-server-bice.vercel.app/services/${params.id}`)
               
             },
             {
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
               {
                 path:'/myreviews/:id',
                 element:<Update></Update>,
-                loader:({params})=>fetch(`http://localhost:5000/myreviews/${params.id}`)
+                loader:({params})=>fetch(`https://service-server-bice.vercel.app/myreviews/${params.id}`)
               }
         ]
     }

@@ -6,7 +6,7 @@ const LIstItem = ({singlelist}) => {
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
     const{cat,_id} = singlelist
-    useTitle('Service')
+   
     return (
         <div>
       

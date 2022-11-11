@@ -13,7 +13,7 @@ const MyReviews = () => {
    
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
+        fetch(`https://service-server-bice.vercel.app/myreviews?email=${user?.email}`)
            
             .then(res => {
                
@@ -27,7 +27,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm('confirm delete');
         if (proceed) {
-            fetch(`http://localhost:5000/myreviews/${id}`, {
+            fetch(`https://service-server-bice.vercel.app/myreviews/${id}`, {
                 method: 'DELETE',
                
             })
@@ -43,7 +43,7 @@ const MyReviews = () => {
     }
 
     const handleStatusUpdate = id => {
-        fetch(`http://localhost:5000/myreviews/${id}`, {
+        fetch(`https://service-server-bice.vercel.app/myreviews/${id}`, {
             method: 'PATCH',
             headers:{
                 'content-type':'application/json'

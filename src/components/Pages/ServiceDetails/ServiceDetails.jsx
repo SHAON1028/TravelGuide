@@ -4,6 +4,7 @@ import {BsArrowRight} from 'react-icons/bs'
 import Review from '../Review/Review';
 import ServiceAllReview from '../Review/ServiceAllReview';
 import { AuthContext } from '../../context/UserContext';
+import useTitle from '../../../hooks/useTitle';
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData()
     const location = useLocation()
@@ -12,10 +13,11 @@ const ServiceDetails = () => {
     const [reviews,setReviews] = useState([])
    const [loading,setLoading] =useState(true)
    const{user} = useContext(AuthContext)
+   useTitle('Service')
 
     useEffect(()=>{
      
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://service-server-bice.vercel.app/reviews/${_id}`)
         .then(res=>res.json())
         .then(data=>{
          
