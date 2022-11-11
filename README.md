@@ -10,6 +10,7 @@ Where you find many information about the place you wanted to visit.You will kno
 - Add review
 - Edit review
 - Delete Review
+- Update Review
 - Jwt
 
 ## Built With
