@@ -44,9 +44,7 @@ https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-
 ```sh
 https://service-review-e7e40.web.app/
 
-```sh
-npm install
-```
+
 
 Now, you can start a local web server by running:
 
@@ -54,8 +52,4 @@ Now, you can start a local web server by running:
 npm start
 ```
 
-Firebase deploy Link:
 
-```sh
-https://web-grasp.web.app/
-```
