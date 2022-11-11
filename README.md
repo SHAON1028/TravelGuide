@@ -46,10 +46,6 @@ https://service-review-e7e40.web.app/
 
 
 
-Now, you can start a local web server by running:
 
-```sh
-npm start
-```
 
 
