@@ -24,21 +24,25 @@ Where you find many information about the place you wanted to visit.You will kno
 ## Development
 
 To get a local copy of the code, clone it using git:
+
+
 Server:
 
 ```sh
-https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-SHAON1028
+https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-SHAON1028
 
 ```
 
 Client:
 
 ```sh
-https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-SHAON1028
+https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-SHAON1028
 
 ```
+ Live server Link:
 
-Install dependencies:
+```sh
+https://service-review-e7e40.web.app/
 
 ```sh
 npm install
