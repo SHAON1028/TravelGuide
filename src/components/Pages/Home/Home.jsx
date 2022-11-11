@@ -13,15 +13,15 @@ const Home = () => {
   <div className="hero-overlay bg-opacity-40"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
-      <h1 className="mb-5 lg:text-5xl text-4xl text-gray-200 font-bold">Hello there</h1>
-      <p className="mb-5 text-gray-200">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+      <h1 className="mb-5 lg:text-5xl text-4xl text-gray-300 font-bold">Welcome To TravelG</h1>
+      <p className="mb-5 text-gray-300">I will guide you how to visit the most beautifull places of Bangladesh.You will know about the place where to go what places to see and many more.</p>
+     <Link to="/services"> <button className="btn btn-primary">Get Started</button></Link>
     </div>
   </div>
 </div>
 
     <div className='mb-10'>
-        <h1 className='lg:text-5xl text-4xl m-10 text-center '>Our Services</h1>
+        <h1 className='lg:text-5xl text-4xl m-10 text-center '>Services</h1>
 
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 lg:ml-32 mt-24 mb-24 ml-20'>
           {

@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
-import { MdOutlineFlight } from 'react-icons/md';
-import { FaHotel,FaCcVisa,FaBook} from 'react-icons/fa';
-import { AiFillCar} from "react-icons/ai";
-import { GiCruiser } from "react-icons/gi";
+
+import logo from '../../../../assets/travelg-logo.png'
+
+import Listname from './Listname';
 
 
 
@@ -24,31 +24,17 @@ const Navbar = () => {
       <div className= "bg-gray-900">
       <div className= "px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className= "relative flex items-center justify-between">
-          <a
-            href="/"
+          <Link
+            to="/"
             aria-label="Company"
             title="Company"
             className= "inline-flex items-center"
           >
-            <svg
-              className= "w-8 text-teal-accent-400"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              stroke="currentColor"
-              fill="none"
-            >
-              <rect x="3" y="1" width="7" height="12" />
-              <rect x="3" y="17" width="7" height="6" />
-              <rect x="14" y="1" width="7" height="6" />
-              <rect x="14" y="11" width="7" height="12" />
-            </svg>
-            <span className= "ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-              Company
+<img src={logo} style={{"height" : "60px","width":"80px"}} alt="" />
+            <span className= " text-xl font-bold tracking-wide text-gray-300 ">
+            Travel<span className='text-2xl text-green-600'>G</span>
             </span>
-          </a>
+          </Link>
           <ul className= "flex items-center hidden space-x-8 lg:flex">
             <li>
               <NavLink
@@ -105,6 +91,23 @@ const Navbar = () => {
                       </li>
               </>:""
             }
+             {
+              user?.email ? <>
+              
+              <li>
+                        <NavLink
+                          to="/addservice"
+                          aria-label="About us"
+                          title=""
+                          className={({ isActive }) =>
+                isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
+              }
+                        >
+                          Add Service
+                        </NavLink>
+                      </li>
+              </>:""
+            }
           </ul>
           <ul className= "flex items-center hidden space-x-8 lg:flex">
            {
@@ -112,7 +115,7 @@ const Navbar = () => {
               <>
        <div className="avatar">      
               <img
-       src={user.photoURL}
+       src={user?.photoURL}
       style={{height:'40px'}}
       className="mr-3 h-6 sm:h-9 relative mx-auto rounded-3xl overflow-hidden ring ring-primary ring-offset-base-100 ring-offset-2"
       alt=""
@@ -260,6 +263,18 @@ const Navbar = () => {
                           My Review
                         </NavLink>
                       </li>
+                      <li>
+                        <NavLink
+                          to="/addservice"
+                          aria-label="About us"
+                          title=""
+                          className={({ isActive }) =>
+                isActive ? "border-b-2 border-blue-500  hover:border-blue-500 text-lg tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" : undefined
+              }
+                        >
+                          Add Service
+                        </NavLink>
+                      </li>
               </>:""
             }
                       {
@@ -294,22 +309,8 @@ const Navbar = () => {
       {/* list of services */}
       <div className="container text-center mx-auto p-4 mt-5">
   <div className="lg:flex justify-center rounded-md lg:text-lg" role="group">
-  <Link to="">
-   <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none flex items-center focus:shadow-outline"><MdOutlineFlight/> Flight</button>
-   </Link>
-   <Link to="">
-   <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none flex items-center focus:shadow-outline"><FaHotel/> Hotels</button>
-   </Link>
-   <Link to="">
-   <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><AiFillCar/>Cars</button>
-   </Link>
-    <Link to="">
-    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><GiCruiser/>Cruises</button>
-    </Link>
-    <Link >
-    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l border-green-500  px-4 py-2 mx-0 outline-none  flex items-center focus:shadow-outline"><FaBook/>Tour Guide</button>
-    </Link>
-    <button className="bg-black text-green-500 hover:bg-blue-500 hover:text-white border-l  border-green-500 rounded-r-lg  flex items-center px-4 py-2 mx-0 outline-none focus:shadow-outline"><FaCcVisa/>Visa</button>
+  <Listname></Listname>
+   
   </div>
 </div>
     </div>

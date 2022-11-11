@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
 const Service = () => {
   //  loader:()=>fetch('http://localhost:5000/services')
     const [services,setServices] = useState([])
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
     const [loading,setLoading] = useState(true)
     useTitle('Service')
 

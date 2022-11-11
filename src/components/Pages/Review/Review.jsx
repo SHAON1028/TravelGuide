@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import useTitle from '../../../hooks/useTitle';
 import { AuthContext } from '../../context/UserContext';
 
 
@@ -7,6 +8,7 @@ const Review = ({serviceDetails,loading}) => {
    
     const{_id,title} = serviceDetails
     const {user} = useContext(AuthContext)
+  
     
     const handleReview = event => {
         
@@ -43,7 +45,7 @@ const Review = ({serviceDetails,loading}) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+               
                 if(data.acknowledged){
                    toast.success('review added')
                     form.reset();
@@ -52,11 +54,11 @@ const Review = ({serviceDetails,loading}) => {
             })
             .catch(er => console.error(er));
 
-        console.log(review)
+        
     }
 
     return (
-        <div>
+        <div className='ml-5'>
             <div className="flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:text-gray-100">
 	<form onSubmit={handleReview} className="flex flex-col items-center w-3/4">
 		<h2 className="text-xl font-semibold text-center">Add  Review</h2>

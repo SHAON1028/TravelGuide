@@ -1,13 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import {BsArrowRight} from 'react-icons/bs'
 import Review from '../Review/Review';
 import ServiceAllReview from '../Review/ServiceAllReview';
+import { AuthContext } from '../../context/UserContext';
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
     const {title,img,price,about,point,_id} = serviceDetails
     const [reviews,setReviews] = useState([])
    const [loading,setLoading] =useState(true)
+   const{user} = useContext(AuthContext)
 
     useEffect(()=>{
      
@@ -32,7 +36,7 @@ const ServiceDetails = () => {
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-300 sm:text-4xl md:mx-auto">
             <span className="relative inline-block">
              
-              <span className="relative">The</span>
+              <span className="relative"></span>
             </span>{' '}
            {title}
           </h2>
@@ -48,11 +52,7 @@ const ServiceDetails = () => {
         <p className="max-w mb-4 text-base text-gray-400 sm:mx-auto">
           {about}
         </p>
-        <ul className='mt-5'>
-            <li className='flex items-center'><span className='text-xl text-blue-600 mr-2'><BsArrowRight/></span>{point.txt1}</li>
-            <li className='flex items-center'><span className='text-xl text-blue-600 mr-2'><BsArrowRight/></span>{point.txt2}</li>
-            <li className='flex items-center'><span className='text-xl text-blue-600 mr-2'><BsArrowRight/></span>{point.txt3}</li>
-        </ul>
+       
         <h2 className='text-xl mt-2 text-orange-600'>Price: {price}</h2>
        
       </div>
@@ -61,7 +61,14 @@ const ServiceDetails = () => {
            </div>
            {/* review */}
            <div className='col-span-1'>
-          <Review serviceDetails={serviceDetails}></Review>
+            {
+              user?.email ? <>
+               <Review serviceDetails={serviceDetails}></Review>
+              </>:<div className='text-center m-2'>
+              Please <Link to='/login' className='text-xl text-blue-600'>Login</Link> to add a review
+              </div>
+            }
+         
             <h2 className='text-xl text-center m-2'>All Reviews</h2>
         {
          

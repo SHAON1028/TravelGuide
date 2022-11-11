@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import useTitle from '../../../hooks/useTitle';
 import UserContext, { AuthContext } from '../../context/UserContext';
 import MyReviewsItem from './MyReviewsItem';
 
 const MyReviews = () => {
     const {user} = useContext(AuthContext)
-    console.log(user)
+    
     const[reviews,setReviews] = useState([])
     const [loading,setLoading] = useState(true)
+    useTitle('My Review')
    
 
     useEffect(() => {
@@ -63,7 +65,12 @@ const MyReviews = () => {
     }
     return (
         <div>
+          
             <p className='text-3xl text-center m-10 '>My Reviews</p>
+
+            {
+                reviews.length===0 ? <p className='text-center text-2xl text-red-500'>No reviews here</p> : ''
+            }
            {
                 loading===true ? <><div className="flex items-center justify-center space-x-2">
                 <div className="w-4 h-4 rounded-full animate-pulse dark:bg-violet-400"></div>
