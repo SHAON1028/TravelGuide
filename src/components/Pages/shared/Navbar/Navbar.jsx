@@ -10,6 +10,7 @@ import Listname from './Listname';
 
 
 const Navbar = () => {
+ 
   const { user,logOut} = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
