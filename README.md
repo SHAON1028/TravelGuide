@@ -1,4 +1,4 @@
-# TravelG
+# TravelGuide
 
 A Travel guide service
 Where you find many information about the place you wanted to visit.You will know where to go how to go and get enjoyable tour with me.Happy Traveling..
