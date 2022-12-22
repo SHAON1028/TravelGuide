@@ -8,7 +8,7 @@ const Listname = () => {
   const [loader, setLoader] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:5000/services')
+    fetch('https://service-update.vercel.app/services')
       .then(res => res.json())
       .then(data => {
         setLitm(data)

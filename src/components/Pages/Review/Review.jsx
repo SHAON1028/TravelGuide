@@ -34,7 +34,7 @@ const Review = ({ serviceDetails, loading }) => {
 
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://service-update.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

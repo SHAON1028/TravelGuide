@@ -19,7 +19,7 @@ const Update = () => {
       date
     }
 
-    fetch(`http://localhost:5000/myreviews/${_id}`, {
+    fetch(`https://service-update.vercel.app/myreviews/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json"

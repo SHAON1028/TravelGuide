@@ -4,7 +4,7 @@ import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
 const Service = () => {
-  //  loader:()=>fetch('http://localhost:5000/services')
+  //  loader:()=>fetch('https://service-update.vercel.app/services')
   const [services, setServices] = useState([])
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
@@ -12,7 +12,7 @@ const Service = () => {
   useTitle('Service')
 
   useEffect(() => {
-    fetch('http://localhost:5000/services')
+    fetch('https://service-update.vercel.app/services')
       .then(res => res.json())
       .then(data => {
         setServices(data)
